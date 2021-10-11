@@ -68,7 +68,7 @@ class Weather(Producer):
         elif month in Weather.summer_months:
             mode = 1.0
         self.temp += min(max(-20.0, random.triangular(-10.0, 10.0, mode)), 100.0)
-        self.status = random.choice(list(Weather.status)).name
+        self.status = random.choice(list(Weather.status))
 
     def run(self, month):
         self._set_weather(month)
